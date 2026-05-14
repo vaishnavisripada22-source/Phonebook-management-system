@@ -1,0 +1,22 @@
+class PhoneBook {
+
+    static const int SIZE = 10;
+
+    vector< list<Contact> > table;
+
+public:
+
+    PhoneBook() {
+        table.resize(SIZE);
+    }
+
+    int hashFunction(string name) {
+
+        int sum = 0;
+
+        for (int i = 0; i < name.length(); i++) {
+            sum += name[i];
+        }
+
+        return sum % SIZE;
+    }
