@@ -1,0 +1,16 @@
+#include <iostream>
+#include <vector>
+#include <list>
+
+using namespace std;
+
+class Contact {
+public:
+    string name;
+    string phone;
+
+    Contact(string n, string p) {
+        name = n;
+        phone = p;
+    }
+};
