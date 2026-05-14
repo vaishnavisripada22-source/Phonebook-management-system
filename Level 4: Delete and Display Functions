@@ -1,0 +1,47 @@
+    void deleteContact(string name) {
+
+        int index = hashFunction(name);
+
+        list<Contact>::iterator it;
+
+        for (it = table[index].begin();
+             it != table[index].end();
+             ++it) {
+
+            if (it->name == name) {
+
+                table[index].erase(it);
+
+                cout << "Contact Deleted Successfully!\n";
+
+                return;
+            }
+        }
+
+        cout << "Contact Not Found!\n";
+    }
+
+    void displayContacts() {
+
+        cout << "\n===== PHONE BOOK CONTACTS =====\n";
+
+        for (int i = 0; i < SIZE; i++) {
+
+            cout << "Index " << i << " : ";
+
+            list<Contact>::iterator it;
+
+            for (it = table[i].begin();
+                 it != table[i].end();
+                 ++it) {
+
+                cout << "[" << it->name
+                     << " : "
+                     << it->phone
+                     << "] ";
+            }
+
+            cout << endl;
+        }
+    }
+};
